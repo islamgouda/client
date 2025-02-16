@@ -17,12 +17,12 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(catchError((error:HttpErrorResponse)=>{
-      debugger
-      if(error.status==404)
+      
+     /* if(error.status==404)
       this.router.navigateByUrl("/not-found")
       else if(error.status==500)
       this.router.navigateByUrl("/server-error")
-      else if(error.status==401)
+      else */if(error.status==401)
       this.Toaster.error(error.message,error.status.toString(),{ toastClass: 'toast-error'})
       else if(error.status==400)
       this.Toaster.error(error.message,error.status.toString())

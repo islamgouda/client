@@ -16,8 +16,15 @@ export interface Basket
     items:basketItem[];
 }
 
-export class basket implements basket
+export class basket implements Basket
 {
     id=cuid();
     items: basketItem[]=[];
+}
+
+export interface BasketTotals
+{
+    shipping:number;
+    subtotal:number;
+    total:number;
 }

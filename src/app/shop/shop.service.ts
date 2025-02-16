@@ -19,7 +19,7 @@ export class ShopService {
     if(shopParams.sort)params=params.append("order",shopParams.sort);
     params=params.append("pageIndex",shopParams.pageNumber);
     params=params.append("pageSize",shopParams.pageSize);
-    debugger
+    
     console.log(shopParams);
    return this.http.get<pagination<product[]>>(this.baseUrl+"Product/GetAll",{params:params})
   }
